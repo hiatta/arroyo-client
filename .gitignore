@@ -1,0 +1,11 @@
+# rvm
+.rvmrc
+
+# misc
+tmp/
+
+# rubygems
+*.gem
+
+# bundler
+Gemfile.lock
