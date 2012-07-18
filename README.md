@@ -62,7 +62,6 @@ constraints = {
   :sort_order=:desc # may be either :asc or :desc and may be either a string or symbol
 }
 client.find_jobs(constraints)
-
 # {
 #   num_found: 427,
 #   jobs: [{
