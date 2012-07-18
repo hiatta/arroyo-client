@@ -39,14 +39,14 @@ response=client.add_job(job_type, job_parameters, job_options)
 * Delete a job
 ```ruby
 # Replace the next line with the job id from the addition of the job
-job_id=2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d
+job_id="2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d"
 client.delete_job(job_id)
 ```
 
 * Query the job
 ```ruby
 # Replace the next line with the job id from the addition of the job
-job_id=2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d
+job_id="2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d"
 client.get_job(job_id)
 ```
 
