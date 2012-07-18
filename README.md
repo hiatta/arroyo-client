@@ -83,7 +83,6 @@ client.find_jobs(constraints)
 * Get the status of the system
 ```ruby
 client.system
-
 # {
 #   global: {
 #     pending: 0,
