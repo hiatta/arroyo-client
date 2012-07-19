@@ -114,7 +114,7 @@ Arroyo.system
 ```
 
 ## Errors
-Errors are handled by throwing errors on non-200 responses from the REST interface.
+Problems are handled by throwing errors on non-200 responses from the REST interface.
 
 ## Credits
 * Inspired by https://github.com/Instagram/instagram-ruby-gem
