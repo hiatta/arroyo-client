@@ -13,9 +13,15 @@ For more details on the server component [please read this](http://github.com/Go
 ```
 gem install arroyo-client
 ```
-* Configure the connection and get a handle to the client
+* Configure the connection
 ```ruby
-client = Arroyo.client
+require 'arroyo'
+
+Arroyo.configure do |config|
+  config.endpoint = "http://arroyo.staging.goodguide.com/1.0/"     # Required
+  config.adapter = :net_http                                       # Optional
+  config.user_agent = "My Arroyo User Agent - #{Arroyo::VERSION}"  # Optional
+end
 ```
 
 * Add a job
@@ -40,14 +46,14 @@ response=client.add_job(job_type, job_parameters, job_options)
 ```ruby
 # Replace the next line with the job id from the addition of the job
 job_id="2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d"
-client.delete_job(job_id)
+Arroyo.delete_job(job_id)
 ```
 
 * Query the job
 ```ruby
 # Replace the next line with the job id from the addition of the job
 job_id="2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d"
-client.get_job(job_id)
+Arroyo.get_job(job_id)
 ```
 
 * List previously run jobs and add some constraints
@@ -56,12 +62,13 @@ constraints = {
   :start => 1, # must be > 0
   :num_jobs => 10, # must be >=0 and <= 100
   :filters => {
-    queue: "high" # the result will match all constraints, fields to query are [here](https://github.com/GoodGuide/arroyo#internal-message-format) 
+    queue: "low", # the result will match all constraints, fields to query are [here](https://github.com/GoodGuide/arroyo#internal-message-format) 
+    job_parameters.sample_param: "A sample parameter"
   },  
   :sort => "initialize_time", # may be any field supported by filters and may be either a string or symbol
   :sort_order=:desc # may be either :asc or :desc and may be either a string or symbol
 }
-client.find_jobs(constraints)
+Arroyo.find_jobs(constraints)
 # {
 #   num_found: 427,
 #   jobs: [{
@@ -82,7 +89,7 @@ client.find_jobs(constraints)
 
 * Get the status of the system
 ```ruby
-client.system
+Arroyo.system
 # {
 #   global: {
 #     pending: 0,
@@ -108,3 +115,6 @@ client.system
 
 ## Errors
 Errors are handled by throwing errors on non-200 responses from the REST interface.
+
+## Credits
+* Inspired by https://github.com/Instagram/instagram-ruby-gem

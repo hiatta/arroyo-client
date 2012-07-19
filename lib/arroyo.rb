@@ -1,13 +1,11 @@
-require 'faraday'
-require 'hashie'
-require 'yajl'
-require 'active_support/core_ext'
-require 'typhoeus'
-
+require File.expand_path('arroyo/error', File.dirname(__FILE__))
+require File.expand_path('arroyo/configuration', File.dirname(__FILE__))
 require File.expand_path('arroyo/client', File.dirname(__FILE__))
-require File.expand_path('arroyo/query', File.dirname(__FILE__))
+
 
 module Arroyo
+  extend Configuration
+  
   # Alias for Arroyo::Client.new
   def self.client(options={})
     Arroyo::Client.new(options)

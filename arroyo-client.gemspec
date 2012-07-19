@@ -3,7 +3,7 @@ require './lib/arroyo/version'
 
 Gem::Specification.new do |s|
   s.name        = "arroyo-client"
-  s.version     = Arroyo::Client.version
+  s.version     = Arroyo::VERSION.dup
   s.authors     = ["Adam Hiatt"]
   s.email       = ["adam@taoit.com"]
   s.homepage    = "https://github.com/GoodGuide/arroyo-client"
@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
   s.files = Dir['Gemfile', 'arroyo-client.gemspec', 'lib/**/*.rb']
 
   s.add_dependency('faraday', '~> 0.8')
-  s.add_dependency('hashie')
+  s.add_dependency('faraday_middleware')
   s.add_dependency('yajl-ruby')
   s.add_dependency('typhoeus')
-  s.add_dependency('workqueue')
+  s.add_dependency('hashie')  
 end
