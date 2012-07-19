@@ -17,7 +17,6 @@ gem install arroyo-client
 * Configure the connection
 ```ruby
 require 'arroyo'
-
 Arroyo.configure do |config|
   config.endpoint = "http://arroyo.staging.goodguide.com/1.0/"     # Required
   config.adapter = :net_http                                       # Optional
