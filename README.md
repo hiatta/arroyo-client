@@ -13,6 +13,7 @@ For more details on the server component [please read this](http://github.com/Go
 ```
 gem install arroyo-client
 ```
+
 * Configure the connection
 ```ruby
 require 'arroyo'
