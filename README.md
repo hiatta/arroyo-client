@@ -18,9 +18,9 @@ gem install arroyo-client
 ```ruby
 require 'arroyo'
 Arroyo.configure do |config|
-    config.endpoint = "http://arroyo.staging.goodguide.com/1.0/"     # Required
-    config.adapter = :net_http                                       # Optional
-    config.user_agent = "My Arroyo User Agent - #{Arroyo::VERSION}"  # Optional
+        config.endpoint = "http://arroyo.staging.goodguide.com/1.0/"     # Required
+        config.adapter = :net_http                                       # Optional
+        config.user_agent = "My Arroyo User Agent - #{Arroyo::VERSION}"  # Optional
 end
 ```
 
@@ -59,14 +59,14 @@ Arroyo.get_job(job_id)
 * List previously run jobs and add some constraints
 ```ruby
 constraints = {
-    :start => 1, # must be > 0
-    :num_jobs => 10, # must be >=0 and <= 100
-    :filters => {
-        queue: "low", # the result will match all constraints, fields to query are [here](https://github.com/GoodGuide/arroyo#internal-message-format) 
-        job_parameters.sample_param: "A sample parameter"
-    },  
-    :sort => "initialize_time", # may be any field supported by filters and may be either a string or symbol
-    :sort_order=:desc # may be either :asc or :desc and may be either a string or symbol
+        :start => 1, # must be > 0
+        :num_jobs => 10, # must be >=0 and <= 100
+        :filters => {
+                queue: "low", # the result will match all constraints, fields to query are [here](https://github.com/GoodGuide/arroyo#internal-message-format) 
+                job_parameters.sample_param: "A sample parameter"
+        },  
+        :sort => "initialize_time", # may be any field supported by filters and may be either a string or symbol
+        :sort_order=:desc # may be either :asc or :desc and may be either a string or symbol
 }
 Arroyo.find_jobs(constraints)
 # {
