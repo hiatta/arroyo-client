@@ -39,7 +39,7 @@ module Arroyo
         when :post, :put
           request.path = path
           request.headers['Content-Type'] = body_mimetype
-          request.body = options unless options.empty?
+          request.body = options.to_json unless options.empty?
         end
       end
       return response.body

@@ -12,7 +12,6 @@ module Arroyo
       }
       @connection ||= Faraday::Connection.new(options) do |conn|
         conn.use Faraday::Request::UrlEncoded
-        conn.use FaradayMiddleware::EncodeJson
         conn.use FaradayMiddleware::Mashify
         conn.use FaradayMiddleware::RaiseHttpException
         conn.use FaradayMiddleware::ParseJson if body_mimetype==Arroyo::Configuration::DEFAULT_BODY_MIMETYPE

@@ -29,7 +29,7 @@ end
 job_type="simple" # The name of the job_type as defined in the job to be executed on the ESB
 job_parameters={:sample_param => "a test string"} # These may be any values that can be encoded into JSON via to_json
 job_options={:priority => "high"} # See [POST /1.0/jobs](https://github.com/GoodGuide/arroyo#use-rest-interface-to-create-new-jobs-and-query-existing-or-completed-jobs) 
-response=client.add_job(job_type, job_parameters, job_options)
+response=Arroyo.add_job(job_type, job_parameters, job_options)
 # {
 #   "job_type": "simple",
 #   "job_id": "2a9b2ba9-e396-493a-9cbc-ca71a4d5d25d",
