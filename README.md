@@ -24,6 +24,31 @@ Arroyo.configure do |config|
 end
 ```
 
+* Get runnable job types
+```ruby
+Arroyo.job_types
+# [{
+#   "job_type": "simple",
+#   "job_class": "Arroyo::Sample::SimpleJob",
+#   "description": "A test job that demonstrates basic job structure"
+#  }, 
+#  {
+#  "job_type": "not_so_simple",
+#   "job_class": "Arroyo::Sample::NotSimpleJob",
+#   "description": "Another test job"
+# }]
+
+OR:
+
+Arroyo.job_types('simple')
+# {
+#   "job_type": "simple",
+#   "job_class": "Arroyo::Sample::SimpleJob",
+#   "description": "A test job that demonstrates basic job structure"
+# }
+
+```
+
 * Add a job
 ```ruby
 job_type="simple" # The name of the job_type as defined in the job to be executed on the ESB

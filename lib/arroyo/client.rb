@@ -54,6 +54,12 @@ module Arroyo
       return system["workers"]
     end
     
+    def job_types(job_type=nil)
+      request_path="job_types"
+      request_path += "/#{job_type.to_s}" if job_type and job_type.to_s.size > 0
+      return get(request_path)
+    end
+    
   private
     def add_job_body(job_type, job_parameters, job_options)
       job_body={}
