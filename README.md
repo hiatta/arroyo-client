@@ -37,16 +37,15 @@ Arroyo.job_types
 #   "job_class": "Arroyo::Sample::NotSimpleJob",
 #   "description": "Another test job"
 # }]
-
+```
 OR:
-
+```ruby
 Arroyo.job_types('simple')
 # {
 #   "job_type": "simple",
 #   "job_class": "Arroyo::Sample::SimpleJob",
 #   "description": "A test job that demonstrates basic job structure"
 # }
-
 ```
 
 * Add a job
