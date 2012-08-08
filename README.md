@@ -10,10 +10,6 @@ For more details on the server component [please read this](http://github.com/Go
 * Download and install the [Arroyo ESB](http://github.com/GoodGuide/arroyo)
 * Add some jobs to the bus system
 * Install this gem or add it your Gemfile
-```
-gem install arroyo-client
-```
-
 * Configure the connection
 ```ruby
 require 'arroyo'
@@ -28,23 +24,23 @@ end
 ```ruby
 Arroyo.job_types
 # [{
-#   "job_type": "simple",
-#   "job_class": "Arroyo::Sample::SimpleJob",
-#   "description": "A test job that demonstrates basic job structure"
+#   job_type: "simple",
+#   job_class: "Arroyo::Sample::SimpleJob",
+#   description: "A test job that demonstrates basic job structure"
 #  }, 
 #  {
-#  "job_type": "not_so_simple",
-#   "job_class": "Arroyo::Sample::NotSimpleJob",
-#   "description": "Another test job"
+#   job_type: "not_so_simple",
+#   job_class: "Arroyo::Sample::NotSimpleJob",
+#   description: "Another test job"
 # }]
 ```
 OR:
 ```ruby
 Arroyo.job_types('simple')
 # {
-#   "job_type": "simple",
-#   "job_class": "Arroyo::Sample::SimpleJob",
-#   "description": "A test job that demonstrates basic job structure"
+#   job_type: "simple",
+#   job_class: "Arroyo::Sample::SimpleJob",
+#   description: "A test job that demonstrates basic job structure"
 # }
 ```
 
