@@ -1,12 +1,12 @@
 require File.expand_path('../connection', __FILE__)
 require File.expand_path('../request', __FILE__)
+require File.expand_path('../configuration', __FILE__)
 
 module Arroyo
   class Client
     include Arroyo::Connection
     include Arroyo::Request
-
-    attr_accessor *Configuration::VALID_OPTIONS_KEYS
+    attr_accessor *Arroyo::Configuration::VALID_OPTIONS_KEYS
     
     def initialize(options={})
       options = Arroyo.options.merge(options)
